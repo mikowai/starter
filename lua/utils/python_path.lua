@@ -13,5 +13,4 @@ function M.python_path()
   -- fallback: system python
   return vim.fn.exepath("python3") or "python3"
 end
-print("DEBUG: custom.utils.python_path loaded.")
 return M
