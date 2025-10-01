@@ -16,6 +16,11 @@ return {
 	  "chrisgrieser/nvim-justice"
 	  -- optional, for streaming output and nicer parameter input
 	  -- dependencies = "folke/snacks.nvim",
+  },
+  {
+    "ThePrimeagen/harpoon",
+    branch = "harpoon2",
+    dependencies = { "nvim-lua/plenary.nvim" }
   }
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
