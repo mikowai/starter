@@ -15,14 +15,14 @@ local harpoon = require("harpoon")
 harpoon:setup()
 -- REQUIRED
 
-vim.keymap.set("n", "<leader>a", function() harpoon:list():add() end)
-vim.keymap.set("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end)
+map("n", "<leader>a", function() harpoon:list():add() end, { desc = "add to harpoon list" })
+map("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "open harpoon menu" })
 
-vim.keymap.set("n", "<C-h>", function() harpoon:list():select(1) end)
-vim.keymap.set("n", "<C-j>", function() harpoon:list():select(2) end)
-vim.keymap.set("n", "<C-k>", function() harpoon:list():select(3) end)
-vim.keymap.set("n", "<C-l>", function() harpoon:list():select(4) end)
+map("n", "<C-u>", function() harpoon:list():select(1) end, { desc = "select from harpoon list (1)" })
+map("n", "<C-i>", function() harpoon:list():select(2) end, { desc = "select from harpoon list (2)" })
+map("n", "<C-o>", function() harpoon:list():select(3) end, { desc = "select from harpoon list (3)" })
+map("n", "<C-p>", function() harpoon:list():select(4) end, { desc = "select from harpoon list (4)" })
 
 -- Toggle previous & next buffers stored within Harpoon list
-vim.keymap.set("n", "<C-S-P>", function() harpoon:list():prev() end)
-vim.keymap.set("n", "<C-S-N>", function() harpoon:list():next() end)
+map("n", "<C-S-P>", function() harpoon:list():prev() end, { desc = "previous harpoon item" })
+map("n", "<C-S-N>", function() harpoon:list():next() end, { desc = "next harpoon item" })
