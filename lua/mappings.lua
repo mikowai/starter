@@ -15,14 +15,19 @@ local harpoon = require("harpoon")
 harpoon:setup()
 -- REQUIRED
 
-map("n", "<leader>a", function() harpoon:list():add() end, { desc = "add to harpoon list" })
-map("n", "<C-e>", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "open harpoon menu" })
+map("n", "<leader>ha", function() harpoon:list():add() end, { desc = "add to harpoon list" })
+map("n", "<leader>hm", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "open harpoon menu" })
 
-map("n", "<C-u>", function() harpoon:list():select(1) end, { desc = "select from harpoon list (1)" })
-map("n", "<C-i>", function() harpoon:list():select(2) end, { desc = "select from harpoon list (2)" })
-map("n", "<C-o>", function() harpoon:list():select(3) end, { desc = "select from harpoon list (3)" })
-map("n", "<C-p>", function() harpoon:list():select(4) end, { desc = "select from harpoon list (4)" })
+map("n", "<leader>h1", function() harpoon:list():select(1) end, { desc = "select from harpoon list (1)" })
+map("n", "<leader>h2", function() harpoon:list():select(2) end, { desc = "select from harpoon list (2)" })
+map("n", "<leader>h3", function() harpoon:list():select(3) end, { desc = "select from harpoon list (3)" })
+map("n", "<leader>h4", function() harpoon:list():select(4) end, { desc = "select from harpoon list (4)" })
 
 -- Toggle previous & next buffers stored within Harpoon list
 map("n", "<C-S-P>", function() harpoon:list():prev() end, { desc = "previous harpoon item" })
-map("n", "<C-S-N>", function() harpoon:list():next() end, { desc = "next harpoon item" })
+map("n", "<C-S-N>", function() harpoon:list():next() end, { desc = "run Python script" })
+
+-- Wider vartical terminal
+map("n", "<leader>v",
+  function() vim.cmd("vsplit | terminal"); vim.cmd("vertical resize 80") end,
+  {desc = "Open vertical terminal with custom size" })
