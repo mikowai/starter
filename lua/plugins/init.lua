@@ -27,10 +27,13 @@ return {
     lazy = false,
 
     -- For blink.cmp's completion
-    -- source
+    -- sourc
     -- dependencies = {
     --     "saghen/blink.cmp"
     -- },
+  },
+  {
+    "elijah-potter/harper",
   },
   -- test new blink
   -- { import = "nvchad.blink.lazyspec" },
